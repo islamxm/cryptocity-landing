@@ -5,5 +5,6 @@ export type advPartType = {
     head: string,
     text?: React.ReactNode | string,
     ex?:string,
-    side: 'left' | 'right'
+    side: 'left' | 'right',
+    bg: StaticImageData
 }

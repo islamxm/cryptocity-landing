@@ -11,7 +11,8 @@ const AdvPart:FC<advPartType> = ({
     side = 'left',
     head,
     text,
-    ex
+    ex,
+    bg
 }) => {
 
 
@@ -19,6 +20,9 @@ const AdvPart:FC<advPartType> = ({
 
         return (
             <div className={`${styles.wrapper} ${styles.left}`}>
+                <div className={styles.bg}>
+                    <Image src={bg} alt="bg"/>
+                </div>
                 <Container>
                     <div className={styles.inner}>
                         <div className={styles.img}>
@@ -47,6 +51,9 @@ const AdvPart:FC<advPartType> = ({
     if(side == 'right') {
         return (
             <div className={`${styles.wrapper} ${styles.right}`}>
+                <div className={styles.bg}>
+                    <Image src={bg} alt="bg"/>
+                </div>
                 <Container>
                     <div className={styles.inner}>
                         <div className={styles.body}>

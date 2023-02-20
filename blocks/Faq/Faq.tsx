@@ -4,6 +4,8 @@ import { faqItemPropsType } from './components/FaqItem/types';
 import {useState} from 'react';
 import FaqItem from './components/FaqItem/FaqItem';
 import {Row, Col} from 'antd';
+import Image from 'next/image';
+import bg from '@/public/images/faq-bg.png';
 
 const list: faqItemPropsType[] = [
     {
@@ -31,6 +33,9 @@ const Faq = () => {
 
     return (
         <div className={styles.wrapper}>
+            <div className={styles.bg}>
+                <Image src={bg} alt=""/>
+            </div>
             <Container>
                 <div className={styles.inner}>
                     <h2 className={`${styles.head} block-title center`}>

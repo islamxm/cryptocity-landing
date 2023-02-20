@@ -5,6 +5,10 @@ import img2 from '@/public/images/adv-2.png';
 import img3 from '@/public/images/adv-3.png';
 import AdvPart from './components/AdvPart/AdvPart';
 
+import bg1 from '@/public/images/adv-1-bg.png';
+import bg2 from '@/public/images/adv-2-bg.png';
+import bg3 from '@/public/images/adv-3-bg.png';
+
 const list: advPartType[] = [
     {
         img: img1,
@@ -26,6 +30,7 @@ const list: advPartType[] = [
             </p>
         </>,
         ex: 'Наслаждайтесь игрой, отдыхай и зарабатывай MPI!',
+        bg: bg1
     },
     {
         img: img2,
@@ -46,6 +51,7 @@ const list: advPartType[] = [
             </p>
         </>,
         ex: 'Чем более майнинг ферм, те больше мощности ты будешь добывать, и тем больше MPI зарабатывать ежедневно!',
+        bg: bg2
     },
     {
         img: img3,
@@ -72,6 +78,7 @@ const list: advPartType[] = [
             </p>
         </>,
         ex: 'Не упусти свой шанс, начни зарабатывать уже сегодня!',
+        bg: bg3
     }
 ]
 

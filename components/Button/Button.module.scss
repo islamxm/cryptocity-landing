@@ -27,12 +27,28 @@
         transition: all .3s ease;
         position: relative;
         z-index: 2;
+        font-size: 16px;
+        .before {
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 100%;
+        }
+
+        .after {
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 100%;
+        }
 
         .text {
             text-align: center;
             color: #232323;
             font-weight: 600;
-            font-size: 16px;
+            
             line-height: 100%;
             transition: all .3s ease;
         }
@@ -48,5 +64,22 @@
         background-color: #fff;
         z-index: 1;
         transform: translate(5px, 5px);
+    }
+}
+
+.button.sm {
+
+}
+
+.button.md {
+
+    
+}
+
+.button.lg {
+    .main {
+        padding: 20px 54px;
+        
+        font-size: 24px;
     }
 }

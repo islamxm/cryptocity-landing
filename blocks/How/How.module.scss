@@ -1,0 +1,56 @@
+.wrapper {
+
+    .inner {
+        padding: 40px 0;
+
+        .head {
+            margin-bottom: 30px;
+        }
+
+        .body {
+            display: flex;
+            
+            .item {
+                margin: 0 20px;
+                width: calc((100% / 3) - 40px);
+                background: #1A1B23;
+                border-radius: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px;
+                min-height: 370px;
+
+                .img {
+                    width: 80px;
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 100%;
+                    background: radial-gradient(111.14% 111.14% at 8.37% 0%, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+                    backdrop-filter: blur(2.5px);
+                    margin-bottom: 15px;
+                    font-size: 35px;
+                    line-height: 35px;
+                    color: var(--aqua);
+                }
+
+                .name {
+                    margin-bottom: 15px;
+                    text-align: center;
+                    font-weight: 800;
+                    font-size: 30px;
+                    line-height: 130%;
+                }
+
+                .text {
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 140%;
+                    color: rgba(255, 255, 255, 0.88);
+                }
+            }
+        }
+    }
+}

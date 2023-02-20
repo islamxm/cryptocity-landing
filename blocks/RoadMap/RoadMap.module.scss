@@ -1,0 +1,85 @@
+.wrapper {
+
+    .inner {
+        padding: 50px 0;
+
+        .head {
+            margin-bottom: 40px;
+            .title {
+                margin-bottom: 20px;
+            }
+
+            .subtitle {
+                text-align: center;
+                font-size: 17px;
+                line-height: 28px;
+                max-width: 600px;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .body {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 20px;
+
+            .line {
+                flex: 0 0 auto;
+                width: 15px;
+                background-color: #fff;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                height: calc(100% - 100vh - 30px);
+
+                .dr {
+                    background-color: var(--aqua);
+                    // height: 50%;
+                }
+            }
+
+            .list {
+                padding-left: 15px;
+
+                .item {
+                    max-width: 600px;
+                    padding-left: calc(50px);
+                    height: 100vh;
+                    position: relative;
+
+                    .circle {
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 100%;
+                        background-color: var(--aqua);
+                        position: absolute;
+                        top: -10px;
+                        left: -30px;
+                    }
+
+                    .name {
+                        font-weight: 300;
+                        font-size: 60px;
+                        line-height: 60px;
+                        margin-bottom: 20px;
+                    }
+
+                    .value {
+                        font-weight: 700;
+                        font-size: 20px;
+                        line-height: 28px;
+                        margin-bottom: 20px;
+                    }
+
+                    .text {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 32px;
+                    }
+                }
+            }
+        }
+    }
+}

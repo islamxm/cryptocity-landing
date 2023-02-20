@@ -1,0 +1,91 @@
+.wrapper {
+
+    .inner {
+        display: flex;
+        align-items: center;
+        padding: 70px 0;
+
+        .img {
+            width: 300px;
+            flex: 0 0 auto;
+        }
+        .body {
+            width: 100%;
+            padding-left: 50px;
+            .head {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 15px;    
+
+                span {
+                    display: block;
+                    height: 6px;
+                    border-radius: 10px;
+                }
+
+                .first {
+                    margin-bottom: 15px;
+                    background-color: var(--aqua);
+                    width: 140px;
+                }
+                .second {
+                    margin-bottom: 30px;
+                    width: 177px;
+                    background-color: #806BFF;
+                }
+
+                .third {
+                    width: 200px;
+                    background-color: var(--aqua);
+                    margin-top: 30px;
+                }
+
+                .title {
+                    text-transform: uppercase;
+                    color: var(--aqua);
+                    font-weight: 700;
+                    font-size: 34px;
+                    line-height: 47px;
+                }
+            }
+
+            .text {
+                font-size: 20px;
+                line-height: 140%;
+                /* or 28px */
+                
+                display: flex;
+                align-items: center;
+                letter-spacing: -0.3px;
+                
+                color: rgba(255, 255, 255, 0.54);
+            }
+
+            .ex {
+                color:#fff;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.wrapper.left {}
+.wrapper.right {
+    text-align: right;
+
+    .inner {
+
+        .body {
+            padding-left: 0;
+            padding-right: 50px;
+
+            .head {
+                align-items: flex-end;
+            }
+        }
+    }
+}

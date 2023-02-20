@@ -1,0 +1,45 @@
+.item {
+    background-color: #1A1B23;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    
+    .head {
+        display: flex;
+        align-items: center;
+        padding: 30px 40px;
+        cursor: pointer;
+        justify-content: space-between;
+
+        .label {
+
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 100%;
+            font-size: 40px;
+            transition: all .3s ease;
+        }
+    }
+
+    .body {
+        height: 0;
+        overflow: hidden;
+        transition: all .3s ease;
+
+        .inner {
+            padding: 0 40px 30px;
+        }
+    }
+}
+
+.item.is_open {
+
+    .icon {
+        transform: rotate(45deg);
+    }
+}

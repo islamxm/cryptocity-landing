@@ -3,13 +3,20 @@
     top: 0;
     left: 0;
     width: 100%;
-    
+    z-index: 100;
+    transition: all .3s ease;
+
     .inner {
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         padding: 15px 0;
+
+
+        .burger {
+            display: none;
+        }
 
         .main {
             display: flex;
@@ -67,6 +74,51 @@
 
                 .item.active {
                     color: var(--aqua);
+                }
+            }
+        }
+    }
+}
+
+.header.active {
+    //background-color: var(--bg);
+    backdrop-filter: blur(10px);
+    // filter: blur(10px);
+}
+
+@media (max-width: 1200px) {
+
+    .header {
+
+        .inner {
+
+            .burger {
+                display: block;
+                width: 50px;
+                height: 40px;
+                position: relative;
+
+                span {
+                    position: absolute;
+                    height: 4px;
+                    background-color: #fff;
+                    border-radius: 20px;
+                    width: 100%;
+
+                    &:nth-child(1) {
+                        top: 0;
+                        left: 0;
+                    }
+
+                    &:nth-child(2) {
+                        top: calc(50% - 2px);
+                        left: 0;
+                    }
+
+                    &:nth-child(3) {
+                        bottom: 0;
+                        left: 0;
+                    }
                 }
             }
         }

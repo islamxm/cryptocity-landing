@@ -1,7 +1,8 @@
 import styles from './RoadMap.module.scss';
 import Container from '@/components/Container/Container';
 import {useState, useRef, useEffect} from 'react';
-import {motion, Variants} from 'framer-motion';
+import {motion, Variants, useScroll, useSpring} from 'framer-motion';
+import { defContainer, defItem, whenVisible } from '@/global/animations';
 
 const list = [
     {
@@ -61,12 +62,26 @@ const draw: Variants = {
 
 const RoadMap = () => {
 
-    
-    
+    const ref = useRef<HTMLDivElement>(null);
+    const [height, setHeight] = useState<number>(0);
+    const {scrollYProgress} = useScroll({
+        target: ref,
+        offset: ['start start', 'end end']
+    })
 
+    const getVal = (e: number) => {
+        setHeight(e * 100);
+    }
+
+    useEffect(() => {
+        if(scrollYProgress) {
+            scrollYProgress.on('change', (e) => getVal(e))
+        }
+        
+    }, [scrollYProgress])
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id={'roadmap'}>
             <div className={styles.line_1}>
                 <motion.svg  
                     initial="hidden"
@@ -116,17 +131,17 @@ const RoadMap = () => {
                 </motion.svg>
             </div>
             <Container>
-                <div className={styles.inner}>
+                <motion.div variants={defContainer} {...whenVisible} className={styles.inner}>
                     <div className={styles.head}>
-                        <h2 className={`${styles.title} block-title center`}>Road map</h2>
-                        <div className={styles.subtitle}>
+                        <motion.h2 variants={defItem} className={`${styles.title} block-title center`}>Road map</motion.h2>
+                        <motion.div variants={defItem} className={styles.subtitle}>
                             As a team with a vast experience in distributed scalable cloud apps, we use the latest IT technologies to create a social ecosystem that would bring millions of Web2 users into the blockchain world
-                        </div>
+                        </motion.div>
                     </div>
                     <div className={styles.body}>
                         
-                        <div className={styles.line}>
-                            <div className={styles.dr}></div>
+                        <div ref={ref} className={styles.line}>
+                            <motion.div className={styles.dr} style={{height: `${height}%`}}></motion.div>
                         </div>
 
 
@@ -135,20 +150,20 @@ const RoadMap = () => {
                             
                             {
                                 list?.map(({head, body, value}, index) => (
-                                    <div className={styles.item} key={index}>
+                                    <motion.div variants={defContainer} {...whenVisible} className={styles.item} key={index}>
                                         <div className={styles.circle}></div>
-                                        <div className={styles.value}>{value}</div>
-                                        <div className={styles.name}>{head}</div>
-                                        <div className={styles.text}>
+                                        <motion.div variants={defItem} className={styles.value}>{value}</motion.div>
+                                        <motion.div variants={defItem} className={styles.name}>{head}</motion.div>
+                                        <motion.div variants={defItem} className={styles.text}>
                                             {body}
-                                        </div>
-                                    </div>
+                                        </motion.div>
+                                    </motion.div>
                                 ))
                             }
 
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </Container>
         </div>
     )

@@ -132,3 +132,18 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .wrapper {
+
+        .inner {
+
+            .body {
+                .ex {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+}

@@ -8,6 +8,7 @@ import {FiSearch} from 'react-icons/fi';
 import {FaWallet} from 'react-icons/fa';
 import {RiMedalLine} from 'react-icons/ri';
 import {motion, Variants} from 'framer-motion';
+import { defContainer, defItem, whenVisible } from '@/global/animations';
 
 const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -69,10 +70,10 @@ const How = () => {
 
             </div>
             <Container>
-                <div className={styles.inner}>
-                    <h2 className={`${styles.head} block-title center`}>Как заработать в MyCryptown?</h2>
+                <motion.div variants={defContainer} {...whenVisible} className={styles.inner}>
+                    <motion.h2 variants={defItem} className={`${styles.head} block-title center`}>Как заработать в MyCryptown?</motion.h2>
                     <div className={styles.body}>
-                        <div className={styles.item}>
+                        <motion.div variants={defItem} className={styles.item}>
                             <div className={styles.img}>
                                 <FiSearch/>
                             </div>
@@ -85,8 +86,8 @@ const How = () => {
                                     под ногами, заходи в игру и находи!
                                 </p>
                             </div>
-                        </div>
-                        <div className={styles.item}>
+                        </motion.div>
+                        <motion.div variants={defItem} className={styles.item}>
                             <div className={styles.img}>
                                 <FaWallet/>
                             </div>
@@ -98,8 +99,8 @@ const How = () => {
                                     Все игроки зарабатывают игровую валюту, чтобы за нее арендовать оборудования для майнинга MPI!
                                 </p>
                             </div>
-                        </div>
-                        <div className={styles.item}>
+                        </motion.div>
+                        <motion.div variants={defItem} className={styles.item}>
                             <div className={styles.img}>
                                 <RiMedalLine/>
                             </div>
@@ -112,9 +113,9 @@ const How = () => {
                                     в которых каждый без вложений может заработать MPI!
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </Container>
         </div>
     )

@@ -26,6 +26,55 @@
                 justify-content: center;
 
 
+                .item {
+                    position: absolute;
+                    filter: drop-shadow(0 0 10px var(--aqua));
+                    font-weight: 300;
+                    transition: all .3s ease;
+                    opacity: 0;
+                }
+
+
+                .item.active {
+                    opacity: 1;
+                }
+
+                .item1 {
+                    top: 0;
+                    left: -30%;
+
+                    // &:after {
+                    //     position: absolute;
+                    //     bottom: 0;
+                    //     right: 0;
+
+                    // }
+                }
+                .item2 {
+                    top: 0%;
+                    right: -30%;
+                }
+                .item3 {
+                    top: 40%;
+                    right: -50%;
+                }
+                .item4 {
+                    top: 65%;
+                    right: -50%;
+                }
+                .item5 {
+                    top: 80%;
+                    right: -30%;
+                }
+                .item6 {
+                    bottom: -5%;
+                }
+
+                .item7 {
+                    left: -45%;
+                    bottom: 20%;
+                }
+
 
                 .label {
                     position: absolute;
@@ -82,12 +131,60 @@
                         font-size: 20px;
                         line-height: 150%;
                         border-top: 1px solid #2B2C3B;
+
+                        .name {
+                            display: none;
+                        }
                         &:first-child {
                             padding-left: 0;
                         }
 
                         &:last-child {
                             padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+
+        .inner {
+            .body {
+                padding-top: 0;
+                padding-bottom: 0;
+
+                .table {
+                    tr {
+                        th {
+                            display: none;
+                        }
+                    }
+                    tr {
+                        display: block;
+                        td {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                            padding: 15px 0 !important;
+                            border: none; 
+                            font-size: 16px;
+                            line-height: 19px;
+                            &:last-child {
+                                border-bottom: 1px solid #2B2C3B;
+                            }
+                            .name {
+                                width: 48%;
+                                padding-right: 10px;
+                                display: block;
+                                opacity: .7;
+                                font-weight: 400;
+
+                            }
                         }
                     }
                 }

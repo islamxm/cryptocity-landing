@@ -4,6 +4,8 @@ import img1 from '@/public/images/how-1.png';
 import img2 from '@/public/images/how-2.png';
 import img3 from '@/public/images/how-3.png';
 import Image from 'next/image';
+import { defContainer, defItem, whenVisible } from '@/global/animations';
+import {motion} from 'framer-motion';
 
 
 const Steps = () => {
@@ -11,11 +13,11 @@ const Steps = () => {
     return (
         <div className={styles.wrapper}>
             <Container>
-                <div className={styles.inner}>
+                <motion.div variants={defContainer} {...whenVisible} className={styles.inner}>
 
-                    <div className={styles.line}></div>
+                   
 
-                    <div className={styles.item}>
+                    <motion.div variants={defItem} className={styles.item}>
                         <div className={styles.img}>
                             <Image src={img1} alt=""/>
                         </div>
@@ -27,8 +29,8 @@ const Steps = () => {
                             Игра доступа на в Goolge Play и App Store
                             </p>
                         </div>
-                    </div>
-                    <div className={styles.item}>
+                    </motion.div>
+                    <motion.div variants={defItem} className={styles.item}>
                         <div className={styles.img}>
                             <Image src={img2} alt=""/> 
                         </div>
@@ -41,8 +43,8 @@ const Steps = () => {
                                 Ищи на реальной карте майнинг-центры и покупай их за внутриигровую валюту
                             </p>
                         </div>
-                    </div>
-                    <div className={styles.item}>
+                    </motion.div>
+                    <motion.div variants={defItem} className={styles.item}>
                         <div className={styles.img}>
                             <Image src={img3} alt=""/> 
                         </div>
@@ -54,9 +56,19 @@ const Steps = () => {
                                 Продавай фиксируя прибыль!
                             </p>
                         </div>
-                    </div>
-                    
-                </div>
+                    </motion.div>
+                    <motion.div 
+                        variants={{
+                            hidden: {width: '0%'},
+                            visible: {
+                                width: '100%',
+                                transition: {
+                                    type: 'ease',
+                                }
+                            }
+                        }}
+                        className={styles.line}></motion.div>
+                </motion.div>
             </Container>
         </div>
     )

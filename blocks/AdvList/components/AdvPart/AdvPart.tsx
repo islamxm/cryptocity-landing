@@ -3,7 +3,8 @@ import styles from './AdvPart.module.scss';
 import {FC} from 'react';
 import Container from '@/components/Container/Container';
 import Image from 'next/image';
-
+import {motion} from 'framer-motion'
+import { defContainer, defItem, whenVisible } from '@/global/animations';
 
 
 const AdvPart:FC<advPartType> = ({
@@ -19,63 +20,63 @@ const AdvPart:FC<advPartType> = ({
     if(side == 'left') {
 
         return (
-            <div className={`${styles.wrapper} ${styles.left}`}>
+            <motion.div variants={defContainer} {...whenVisible} className={`${styles.wrapper} ${styles.left}`}>
                 <div className={styles.bg}>
                     <Image src={bg} alt="bg"/>
                 </div>
                 <Container>
                     <div className={styles.inner}>
-                        <div className={styles.img}>
+                        <motion.div variants={defItem} className={styles.img}>
                             <Image src={img} alt=""/>
-                        </div>
+                        </motion.div>
                         <div className={styles.body}>
-                            <div className={styles.head}>
+                            <motion.div variants={defItem} className={styles.head}>
                                 <span className={styles.first}></span>
                                 <span className={styles.second}></span>
                                 <h2 className={styles.title}>{head}</h2>
                                 <span className={styles.third}></span>
-                            </div>
-                            <div className={styles.text}>
+                            </motion.div>
+                            <motion.div variants={defItem} className={styles.text}>
                                 {text}
-                            </div>
-                            <div className={styles.ex}>
+                            </motion.div>
+                            <motion.div variants={defItem} className={styles.ex}>
                                 {ex}
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </Container>
-            </div>
+            </motion.div>
         )
     }
 
     if(side == 'right') {
         return (
-            <div className={`${styles.wrapper} ${styles.right}`}>
+            <motion.div variants={defContainer} {...whenVisible} className={`${styles.wrapper} ${styles.right}`}>
                 <div className={styles.bg}>
                     <Image src={bg} alt="bg"/>
                 </div>
                 <Container>
                     <div className={styles.inner}>
                         <div className={styles.body}>
-                            <div className={styles.head}>
+                            <motion.div variants={defItem} className={styles.head}>
                                 <span className={styles.first}></span>
                                 <span className={styles.second}></span>
                                 <h2 className={styles.title}>{head}</h2>
                                 <span className={styles.third}></span>
-                            </div>
-                            <div className={styles.text}>
+                            </motion.div>
+                            <motion.div variants={defItem} className={styles.text}>
                                 {text}
-                            </div>
-                            <div className={styles.ex}>
+                            </motion.div>
+                            <motion.div variants={defItem} className={styles.ex}>
                                 {ex}
-                            </div>
+                            </motion.div>
                         </div>
-                        <div className={styles.img}>
+                        <motion.div variants={defItem} className={styles.img}>
                             <Image src={img} alt=""/>
-                        </div>
+                        </motion.div>
                     </div>
                 </Container>
-            </div>
+            </motion.div>
         )
     }
 

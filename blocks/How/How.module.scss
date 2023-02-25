@@ -65,3 +65,46 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+    .wrapper {
+
+        .inner {
+
+            .body {
+                justify-content: center;
+                flex-wrap: wrap;
+                .item {
+                    width: calc((100% / 2) - 40px);
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+
+        .inner {
+
+            .body {
+                margin-left: 0;
+                margin-right: 0;
+
+                .item {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-left: 0;
+                    margin-bottom: 20px;
+                    padding: 20px;
+
+                    .name {
+                        font-size: 25px;
+
+                    }
+                }
+            }
+        }
+    }
+}

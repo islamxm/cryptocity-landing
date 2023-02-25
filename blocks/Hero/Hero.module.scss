@@ -40,7 +40,7 @@
             .head {
                 font-size: 60px;
                 line-height: 84px;
-                font-weight: 700;
+                font-weight: 300;
                 margin-bottom: 15px;
                 
                 span {
@@ -49,8 +49,8 @@
             }
 
             .text {
-                font-size: 20px;
-                line-height: 140%;
+                // font-size: 20px;
+                // line-height: 140%;
                 letter-spacing: -0.3px;
                 color: rgba(255, 255, 255, 0.54);
                 margin-bottom: 35px;
@@ -98,6 +98,62 @@
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .wrapper {
+
+        .inner {
+            flex-wrap: wrap;
+
+            .content {
+                width: 100%;
+                margin-bottom: 30px;
+
+                .head {
+                    font-size: 45px;
+                    line-height: 55px;
+                }
+            }
+
+            .img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+
+        .inner {
+            padding-top: 100px;
+            .content {
+                .head {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+
+                .links {
+
+                    flex-wrap: wrap;
+
+                    .item {
+                        width: 100%;
+                        margin-bottom: 20px;
+                        
+                    }
+                }
+
+                .action {
+
+                    button {
+                        width: 100%;
+                    }
+                }
             }
         }
     }

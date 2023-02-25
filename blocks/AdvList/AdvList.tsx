@@ -4,7 +4,7 @@ import img1 from '@/public/images/adv-1.png';
 import img2 from '@/public/images/adv-2.png';
 import img3 from '@/public/images/adv-3.png';
 import AdvPart from './components/AdvPart/AdvPart';
-
+import {motion} from 'framer-motion';
 import bg1 from '@/public/images/adv-1-bg.png';
 import bg2 from '@/public/images/adv-2-bg.png';
 import bg3 from '@/public/images/adv-3-bg.png';
@@ -86,7 +86,8 @@ const AdvList = () => {
 
 
     return (
-        <div className={styles.wrapper}>
+        <div
+            className={styles.wrapper}>
             {
                 list?.map((item, index) => (
                     <AdvPart {...item} key={index}/>

@@ -18,8 +18,17 @@ export const whenVisible = {
     viewport:{once: true}
 }
 
-export const defItem: Variant = {
-
+export const defItem: Variants = {
+  hidden: {y: 20, opacity: 0},
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'ease',
+    }
+  }
 }
+
+
 
 

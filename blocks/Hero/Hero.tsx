@@ -11,7 +11,7 @@ import bg from '@/public/images/hero-bg.png';
 import appStore from '@/public/images/as-badge.png';
 import googlePlay from '@/public/images/gp-badge.png';
 import {motion, VariantLabels, Variants} from 'framer-motion';
-import { defContainer, whenVisible } from '@/global/animations';
+import { defContainer, defItem, whenVisible } from '@/global/animations';
 
 const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -78,25 +78,25 @@ const Hero:FC = () => {
             <Container>
                 <div className={styles.inner}>
                     <div className={styles.content}>
-                        <h1 className={styles.head}>
+                        <motion.h1 variants={defItem} className={styles.head}>
                         MyCryptown - <br/>
                         это P2E-проект <br/>
                         со своим токеном MPI <br/>
-                        </h1>
-                        <div className={styles.text}>
+                        </motion.h1>
+                        <motion.div variants={defItem} className={styles.text}>
                             <p>
                                 В увлекательном мире myCryptown ты можешь стать майнером криптовалют, покупать помещения под майнинг в своем городе, обустраивать майнинг фермы, участвовать в аукционах между игроками, чтобы получить максимально эффективное оборудование для майнинга. 
                             </p>
                             <b> И это лишь часть твоих возможностей для заработка и игры.</b>
-                        </div>
-                        <div className={styles.action}>
+                        </motion.div>
+                        <motion.div variants={defItem} className={styles.action}>
                             <Button
                                 size='lg'
                                 text='Купить MPI'
                                 after={<HiOutlineArrowNarrowRight/>}
                                 />
-                        </div>
-                        <div className={styles.links}>
+                        </motion.div>
+                        <motion.div variants={defItem} className={styles.links}>
                             <div className={styles.item}>
                                 <Link href={'/'}>
                                     <Image src={googlePlay} alt=""/>
@@ -107,11 +107,11 @@ const Hero:FC = () => {
                                     <Image src={appStore} alt=""/>
                                 </Link>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                    <div className={styles.img}>
+                    <motion.div variants={defItem} className={styles.img}>
                         <Image src={img} alt=""/>
-                    </div>
+                    </motion.div>
                 </div>
             </Container>
         </motion.div>

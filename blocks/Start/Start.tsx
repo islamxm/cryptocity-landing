@@ -5,6 +5,15 @@ import { defContainer, defItem, whenVisible } from '@/global/animations';
 import { useEffect, useCallback, useState } from 'react';
 
 
+const tableData = [
+    {name: 'private sale', count: 10000000, holds: 12, parts: '10%'},
+    {name: 'public sale', count: 5000000, holds: 6, parts: '5%'},
+    {name: 'Team', count: 15000000, holds: 18, parts: '15%'},
+    {name: 'Marketing and Listing', count: 20000000, holds: 24, parts: '20%'},
+    {name: 'Play to earn managed by the DAO', count: 28000000, holds: 0, parts: '28,%'},
+    {name: 'Liquidity', count: 2000000, holds: 0, parts: '2%'},
+    {name: 'Staking rewards', count: 20000000, holds: 0, parts: '20%'},
+]
 
 
 
@@ -28,7 +37,7 @@ const Start = () => {
                     <motion.h2 variants={defItem} className={`${styles.head} block-title center`}>
                     Начни зарабатывать в MyCryptown уже сейчас:
                     </motion.h2>
-                    <motion.div variants={defItem} className={styles.chart} id={'chart'}>
+                    <div className={styles.chart} id={'chart'}>
                         <div className={styles.el}>
 
                             <div className={`${styles.item1} ${styles.item} ${activeIndex === 1 ? styles.active : ''}`}>TeamWallet 28%</div>
@@ -39,9 +48,35 @@ const Start = () => {
                             <div className={`${styles.item6} ${styles.item} ${activeIndex === 6 ? styles.active : ''}`}>TeamWallet 28%</div>
                             <div className={`${styles.item7} ${styles.item} ${activeIndex === 7 ? styles.active : ''}`}>TeamWallet 28%</div>
 
-                            <div className={styles.label}>MPI</div>
+                            <motion.div variants={{
+                                hidden: {
+                                    scale: 0
+                                },
+                                visible: {
+                                    scale: 1,
+                                    transition: {
+                                        type: 'spring',
+                                        stiffness: 400,
+                                        damping: 17
+                                    }
+                                },
+                                
+                            }} className={styles.label}>MPI</motion.div>
 
-                            <svg width="371" height="371" viewBox="0 0 371 371" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <motion.svg variants={{
+                                hidden: {
+                                    scale: 0
+                                },
+                                visible: {
+                                    scale: 1,
+                                    transition: {
+                                        type: 'spring',
+                                        stiffness: 400,
+                                        damping: 17
+                                    }
+                                },
+                        
+                                }} width="371" height="371" viewBox="0 0 371 371" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g 
                                     id='1' filter="url(#filter0_d_26_1608)">
                                 <path
@@ -185,10 +220,10 @@ const Start = () => {
                                 <stop offset="1" stop-color="#FF7EB3"/>
                                 </linearGradient>
                                 </defs>
-                            </svg>
+                            </motion.svg>
                         </div>
                         
-                    </motion.div>
+                    </div>
                     <div className={styles.body} id={'plan'}>
                         <table className={styles.table}>
                             <tbody>
@@ -198,113 +233,29 @@ const Start = () => {
                                 <th>Холды (мес.)</th>
                                 <th>Доля</th>
                             </tr>
-                            <tr>
-                                <td>
-                                    Private sale
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Количество</div>
-                                    10 000 000
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Холды (мес.)</div>
-                                    12
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Доля</div>
-                                    10%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Public sale</td>
-                                <td>
-                                    <div className={styles.name}>Количество</div>
-                                    10 000 000
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Холды (мес.)</div>
-                                    12
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Доля</div>
-                                    10%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Team</td>
-                                <td>
-                                    <div className={styles.name}>Количество</div>
-                                    10 000 000
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Холды (мес.)</div>
-                                    12
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Доля</div>
-                                    10%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Marketing and Listing</td>
-                                <td>
-                                    <div className={styles.name}>Количество</div>
-                                    10 000 000
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Холды (мес.)</div>
-                                    12
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Доля</div>
-                                    10%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Play to earn managed by the DAO</td>
-                                <td>
-                                    <div className={styles.name}>Количество</div>
-                                    10 000 000
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Холды (мес.)</div>
-                                    12
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Доля</div>
-                                    10%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Liquidity</td>
-                                <td>
-                                    <div className={styles.name}>Количество</div>
-                                    10 000 000
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Холды (мес.)</div>
-                                    12
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Доля</div>
-                                    10%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Staking rewards</td>
-                                <td>
-                                    <div className={styles.name}>Количество</div>
-                                    10 000 000
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Холды (мес.)</div>
-                                    12
-                                </td>
-                                <td>
-                                    <div className={styles.name}>Доля</div>
-                                    10%
-                                </td>
-                            </tr>
+                            {
+                                tableData?.map((i,index) => (
+                                    <tr key={index}>
+                                        <td>
+                                            {i.name}
+                                        </td>
+                                        <td>
+                                            <div className={styles.name}>Количество</div>
+                                            {i.count}
+                                        </td>
+                                        <td>
+                                            <div className={styles.name}>Холды (мес.)</div>
+                                            {i.holds}
+                                        </td>
+                                        <td>
+                                            <div className={styles.name}>Доля</div>
+                                            {i.parts}
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                            
+                            
                             </tbody>
                             
                         </table>    

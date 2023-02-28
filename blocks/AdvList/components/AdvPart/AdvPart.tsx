@@ -25,25 +25,40 @@ const AdvPart:FC<advPartType> = ({
                     <Image src={bg} alt="bg"/>
                 </div>
                 <Container>
-                    <div className={styles.inner}>
-                        <motion.div variants={defItem} className={styles.img}>
+                    <motion.div 
+                        variants={{
+                            hidden: {
+                                x: '10%',
+                                opacity: 0
+                            },
+                            visible: {
+                                x: 0,
+                                opacity: 1,
+                                transition: {
+                                    type: 'tween',
+                                    duration: 1
+                                }
+                            }
+                        }}
+                        className={styles.inner}>
+                        <div className={styles.img}>
                             <Image src={img} alt=""/>
-                        </motion.div>
+                        </div>
                         <div className={styles.body}>
-                            <motion.div variants={defItem} className={styles.head}>
+                            <div className={styles.head}>
                                 <span className={styles.first}></span>
                                 <span className={styles.second}></span>
                                 <h2 className={styles.title}>{head}</h2>
                                 <span className={styles.third}></span>
-                            </motion.div>
-                            <motion.div variants={defItem} className={styles.text}>
+                            </div>
+                            <div  className={styles.text}>
                                 {text}
-                            </motion.div>
-                            <motion.div variants={defItem} className={styles.ex}>
+                            </div>
+                            <div className={styles.ex}>
                                 {ex}
-                            </motion.div>
+                            </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </Container>
             </motion.div>
         )
@@ -56,25 +71,40 @@ const AdvPart:FC<advPartType> = ({
                     <Image src={bg} alt="bg"/>
                 </div>
                 <Container>
-                    <div className={styles.inner}>
+                    <motion.div 
+                        variants={{
+                            hidden: {
+                                x: '-10%',
+                                opacity: 0
+                            },
+                            visible: {
+                                x: 0,
+                                opacity: 1,
+                                transition: {
+                                    type: 'tween',
+                                    duration: 1
+                                }
+                            }
+                        }}
+                        className={styles.inner}>
                         <div className={styles.body}>
-                            <motion.div variants={defItem} className={styles.head}>
+                            <div className={styles.head}>
                                 <span className={styles.first}></span>
                                 <span className={styles.second}></span>
                                 <h2 className={styles.title}>{head}</h2>
                                 <span className={styles.third}></span>
-                            </motion.div>
-                            <motion.div variants={defItem} className={styles.text}>
+                            </div>
+                            <div className={styles.text}>
                                 {text}
-                            </motion.div>
-                            <motion.div variants={defItem} className={styles.ex}>
+                            </div>
+                            <div className={styles.ex}>
                                 {ex}
-                            </motion.div>
+                            </div>
                         </div>
-                        <motion.div variants={defItem} className={styles.img}>
+                        <div className={styles.img}>
                             <Image src={img} alt=""/>
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
                 </Container>
             </motion.div>
         )

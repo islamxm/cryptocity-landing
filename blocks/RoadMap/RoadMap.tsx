@@ -61,9 +61,10 @@ const draw: Variants = {
 
 
 const RoadMap = () => {
-
+    const lastItemRef = useRef<HTMLDivElement>(null);
     const ref = useRef<HTMLDivElement>(null);
     const [height, setHeight] = useState<number>(0);
+    const [lineHeight, setLineHeight] = useState<number>(0)
     const {scrollYProgress} = useScroll({
         target: ref,
         offset: ['start start', 'end end']
@@ -79,6 +80,12 @@ const RoadMap = () => {
         }
         
     }, [scrollYProgress])
+
+    useEffect(() => {
+        if(lastItemRef?.current) {
+            setLineHeight(lastItemRef.current.scrollHeight)
+        }
+    }, [lastItemRef])
 
     return (
         <div className={styles.wrapper} id={'roadmap'}>
@@ -140,7 +147,7 @@ const RoadMap = () => {
                     </div>
                     <div className={styles.body}>
                         
-                        <div ref={ref} className={styles.line}>
+                        <div ref={ref} className={styles.line} style={{height: `calc(100% - ${lineHeight}px)`}}>
                             <motion.div className={styles.dr} style={{height: `${height}%`}}></motion.div>
                         </div>
 
@@ -150,7 +157,9 @@ const RoadMap = () => {
                             
                             {
                                 list?.map(({head, body, value}, index) => (
-                                    <motion.div variants={defContainer} {...whenVisible} className={styles.item} key={index}>
+                                    <motion.div 
+                                        ref={index == list?.length - 1 ? lastItemRef : null}
+                                        variants={defContainer} {...whenVisible} className={styles.item} key={index}>
                                         <div className={styles.circle}></div>
                                         <motion.div variants={defItem} className={styles.value}>{value}</motion.div>
                                         <motion.div variants={defItem} className={styles.name}>{head}</motion.div>

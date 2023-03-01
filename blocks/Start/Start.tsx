@@ -10,7 +10,7 @@ const tableData = [
     {name: 'Public sale', count: '5 000 000', holds: 6, parts: '5%'},
     {name: 'Team', count: '15 000 000', holds: 18, parts: '15%'},
     {name: 'Marketing and Listing', count: '20 000 000', holds: 24, parts: '20%'},
-    {name: 'Play to earn managed by the DAO', count: '28 000 000', holds: 0, parts: '28,%'},
+    {name: 'Play to earn managed by the DAO', count: '28 000 000', holds: 0, parts: '28%'},
     {name: 'Liquidity', count: '2 000 000', holds: 0, parts: '2%'},
     {name: 'Staking rewards', count: '20 000 000', holds: 0, parts: '20%'},
 ]
@@ -18,16 +18,58 @@ const tableData = [
 
 
 const Start = () => {
+    const [hoverOn, setHoverOn] = useState(true)
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
 
-    const onHover = useCallback((index: number) => {
-        setActiveIndex(index)
-    },[])
 
-    const onLeave = () => {
-        setActiveIndex(0)
+    const onHover = useCallback((index: number) => {
+        if(hoverOn) {
+            setActiveIndex(index)
+        }
+    },[hoverOn])
+
+    useEffect(() => checkWindowSize, [])
+
+    const checkWindowSize = () => {
+        if(window.innerWidth <= 1024) {
+            setHoverOn(false)
+        } else {
+            setHoverOn(true)
+        }
     }
+
+    useEffect(() => {
+        window.addEventListener('resize', checkWindowSize);
+        return () => window.removeEventListener('resize', checkWindowSize)
+    }, [])
+
+    const onLeave = useCallback(() => {
+        if(hoverOn) {
+            setActiveIndex(0)
+        }
+    }, [hoverOn])
+
+    const classSwitch = (index: number) => {
+        switch(index) {
+            case 0:
+                return styles.item1
+            case 1:
+                return styles.item2
+            case 2:
+                return styles.item3
+            case 3:
+                return styles.item4
+            case 4:
+                return styles.item5
+            case 5: 
+                return styles.item6
+            case 6:
+                return styles.item7
+        }
+    }
+
+    
 
     
     return (
@@ -39,14 +81,13 @@ const Start = () => {
                     </motion.h2>
                     <div className={styles.chart} id={'chart'}>
                         <div className={styles.el}>
-
-                            <div className={`${styles.item1} ${styles.item} ${activeIndex === 1 ? styles.active : ''}`}>TeamWallet 28%</div>
-                            <div className={`${styles.item2} ${styles.item} ${activeIndex === 2 ? styles.active : ''}`}>TeamWallet 28%</div>
-                            <div className={`${styles.item3} ${styles.item} ${activeIndex === 3 ? styles.active : ''}`}>TeamWallet 28%</div>
-                            <div className={`${styles.item4} ${styles.item} ${activeIndex === 4 ? styles.active : ''}`}>TeamWallet 28%</div>
-                            <div className={`${styles.item5} ${styles.item} ${activeIndex === 5 ? styles.active : ''}`}>TeamWallet 28%</div>
-                            <div className={`${styles.item6} ${styles.item} ${activeIndex === 6 ? styles.active : ''}`}>TeamWallet 28%</div>
-                            <div className={`${styles.item7} ${styles.item} ${activeIndex === 7 ? styles.active : ''}`}>TeamWallet 28%</div>
+                            {
+                                tableData?.map((item, index) => (
+                                    <div 
+                                        key={index}
+                                        className={`${classSwitch(index)} ${styles.item} ${activeIndex === index + 1 ? styles.active : ''}`}>{item.name} {item.parts}</div>
+                                ))
+                            }
 
                             <motion.div variants={{
                                 hidden: {
@@ -82,42 +123,49 @@ const Start = () => {
                                 <path
                                     onMouseLeave={onLeave}
                                     onMouseEnter={() => onHover(2)}
+                                    onClick={() => setActiveIndex(2)}
                                     d="M168.705 0.864855C191.65 -1.50449 214.835 1.00775 236.74 8.23652C258.644 15.4653 278.771 27.247 295.798 42.8075C312.825 58.3681 326.367 77.3553 335.534 98.5217C344.701 119.688 349.285 142.555 348.986 165.619L316.289 165.195C316.528 146.744 312.86 128.45 305.527 111.517C298.193 94.5842 287.36 79.3945 273.738 66.946C260.117 54.4976 244.015 45.0722 226.492 39.2892C208.968 33.5062 190.42 31.4964 172.064 33.3919L168.705 0.864855Z" fill="url(#paint0_linear_26_1608)"/>
                                 </g>
                                 <g id='2' filter="url(#filter1_d_26_1608)">
                                 <path
                                     onMouseLeave={onLeave}
                                     onMouseEnter={() => onHover(6)}
+                                    onClick={() => setActiveIndex(6)}
                                     d="M272.479 301.944C249.924 316.115 224.249 324.56 197.686 326.545C171.123 328.531 144.477 323.996 120.066 313.335L133.153 283.368C152.682 291.897 173.998 295.524 195.249 293.936C216.499 292.348 237.039 285.592 255.083 274.255L272.479 301.944Z" fill="url(#paint1_linear_26_1608)"/>
                                 </g>
                                 <g id='3' filter="url(#filter2_d_26_1608)">
                                 <path 
                                     onMouseLeave={onLeave}
                                     onMouseEnter={() => onHover(7)}
+                                    onClick={() => setActiveIndex(7)}
                                     d="M121.597 313.995C86.7099 299.181 58.0533 272.707 40.528 239.1C23.0028 205.493 17.6977 166.842 25.52 129.756L57.516 136.505C51.2581 166.174 55.5022 197.095 69.5224 223.98C83.5426 250.865 106.468 272.045 134.378 283.896L121.597 313.995Z" fill="url(#paint2_linear_26_1608)"/>
                                 </g>
                                 <g id='4' filter="url(#filter3_d_26_1608)">
                                 <path 
                                     onMouseLeave={onLeave}
                                     onMouseEnter={() => onHover(1)}
+                                    onClick={() => setActiveIndex(1)}
                                     d="M25.2031 131.295C32.1061 96.9364 49.8661 65.705 75.8648 42.2054C101.864 18.7058 134.725 4.18173 169.604 0.774553L172.783 33.3196C144.88 36.0454 118.591 47.6646 97.7919 66.4643C76.9929 85.264 62.7848 110.249 57.2625 137.736L25.2031 131.295Z" fill="url(#paint3_linear_26_1608)"/>
                                 </g>
                                 <g id='5' filter="url(#filter4_d_26_1608)">
                                 <path 
                                     onMouseLeave={onLeave}
                                     onMouseEnter={() => onHover(3)}
+                                    onClick={() => setActiveIndex(3)}
                                     d="M349 163.5C349 177.126 347.297 190.698 343.93 203.901L312.244 195.821C314.937 185.258 316.3 174.401 316.3 163.5H349Z" fill="url(#paint4_linear_26_1608)"/>
                                 </g>
                                 <g id='6' filter="url(#filter5_d_26_1608)">
                                 <path 
                                     onMouseLeave={onLeave}
                                     onMouseEnter={() => onHover(4)}
+                                    onClick={() => setActiveIndex(4)}
                                     d="M345.695 196.207C341.615 216.193 333.83 235.24 322.743 252.362L295.295 234.59C304.164 220.892 310.392 205.655 313.656 189.665L345.695 196.207Z" fill="url(#paint5_linear_26_1608)"/>
                                 </g>
                                 <g id='7' filter="url(#filter6_d_26_1608)">
                                 <path 
                                     onMouseLeave={onLeave}
                                     onMouseEnter={() => onHover(5)}
+                                    onClick={() => setActiveIndex(5)}
                                     d="M326.682 245.962C311.72 271.578 290.071 292.64 264.055 306.893L248.344 278.214C269.157 266.812 286.476 249.962 298.445 229.47L326.682 245.962Z" fill="url(#paint6_linear_26_1608)"/>
                                 </g>
                                 <defs>
@@ -222,7 +270,14 @@ const Start = () => {
                                 </defs>
                             </motion.svg>
                         </div>
-                        
+                        {
+                            activeIndex !== 0 ? (
+                                <div className={styles.label}>
+                                    <span>{tableData[activeIndex - 1].parts}</span>
+                                    {tableData[activeIndex - 1].name}
+                                </div>
+                            ) : null
+                        }
                     </div>
                     <div className={styles.body} id={'plan'}>
                         <table className={styles.table}>

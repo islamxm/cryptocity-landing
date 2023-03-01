@@ -26,7 +26,7 @@ export default function Home() {
       </Head>
       <Header menuIsActive={menuIsActive}/>
       <main>
-        {/* <Social/> */}
+        <Social/>
         <Hero/>
         <How/>  
         <AdvList/>

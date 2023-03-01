@@ -17,6 +17,10 @@
             justify-content: center;
             margin-bottom: 20px;
 
+            .label {
+                display: none;
+            }
+
             .el {
                 position: relative;
                 width: 371px;
@@ -40,8 +44,8 @@
                 }
 
                 .item1 {
-                    top: 0;
-                    left: -30%;
+                    top: 5%;
+                    left: -50%;
 
                     // &:after {
                     //     position: absolute;
@@ -49,30 +53,128 @@
                     //     right: 0;
 
                     // }
+
+                    &:after {
+                        position: absolute;
+                        bottom: 0;
+                        right: -80%;
+                        width: 130px;
+                        height: 20px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        background-image: url('../../public/images/chart-1.svg');
+                        content: '';
+                    }
                 }
                 .item2 {
                     top: 0%;
-                    right: -30%;
+                    right: -61%;
+
+                    &:after {
+                        position: absolute;
+                        top : 12px;
+                        left: -110%;
+                        width: 150px;
+                        height: 55px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        background-image: url('../../public/images/chart-2.svg');
+                        content: '';
+                    }
                 }
                 .item3 {
-                    top: 40%;
-                    right: -50%;
+                    top: 43%;
+                    right: -45%;
+
+                    &:after {
+                        position: absolute;
+                        top : 5px;
+                        left: -110%;
+                        width: 110px;
+                        height: 20px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        background-image: url('../../public/images/chart-3.svg');
+                        content: '';
+                    }
                 }
                 .item4 {
-                    top: 65%;
-                    right: -50%;
+                    top: 60%;
+                    right: -80%;
+                    max-width: 200px;
+                    width: 100%;
+
+                    &:after {
+                        position: absolute;
+                        top : -10%;
+                        left: -70%;
+                        width: 140px;
+                        height: 50px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        background-image: url('../../public/images/chart-4.svg');
+                        content: '';
+                    }
                 }
                 .item5 {
-                    top: 80%;
-                    right: -30%;
+                    top: 75%;
+                    right: -60%;
+                    max-width: 200px;
+                    width: 100%;
+
+                    &:after {
+                        position: absolute;
+                        top : 0%;
+                        left: -60%;
+                        width: 130px;
+                        height: 40px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        background-image: url('../../public/images/chart-5.svg');
+                        content: '';
+                    }
                 }
                 .item6 {
-                    bottom: -5%;
+                    bottom: 0%;
+                    left: -10%;
+
+                    &:after {
+                        position: absolute;
+                        top : -100%;
+                        right: -110%;
+                        width: 140px;
+                        height: 50px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        background-image: url('../../public/images/chart-6.svg');
+                        content: '';
+                    }
                 }
 
                 .item7 {
-                    left: -45%;
+                    left: -75%;
                     bottom: 20%;
+                    max-width: 200px;
+                    width: 100%;
+
+                    &:after {
+                        position: absolute;
+                        top : -50%;
+                        right: -60%;
+                        width: 150px;
+                        height: 50px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        background-image: url('../../public/images/chart-7.svg');
+                        content: '';
+                    }
                 }
 
 
@@ -148,6 +250,44 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .wrapper {
+
+        .inner {
+            .chart {
+                display: flex;
+                flex-direction: column;
+                .label {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    filter: drop-shadow(0 0 10px var(--aqua));
+                    font-weight: 300;
+                    text-align: center;
+                    flex-direction: column;
+                    font-size: 20px;
+                    line-height: 30px;
+                    span {
+                        display: block;
+                        font-size: 30px;
+                        font-weight: 700;
+                        line-height: 40px;
+                    }
+                }
+
+                .el {
+
+                    .item {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 @media (max-width: 768px) {
     .wrapper {

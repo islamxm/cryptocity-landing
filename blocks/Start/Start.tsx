@@ -15,7 +15,17 @@ const tableData = [
     {name: 'Staking rewards', count: '20 000 000', holds: 0, parts: '20%'},
 ]
 
+const chartData = [
+    
+    {name: 'Marketing and Listing', count: '20 000 000', holds: 24, parts: '20%'},
+    {name: 'Play to earn managed by the DAO', count: '28 000 000', holds: 0, parts: '28%'},
+    {name: 'Liquidity', count: '2 000 000', holds: 0, parts: '2%'},
+    {name: 'Public sale', count: '5 000 000', holds: 6, parts: '5%'},
+    {name: 'Private sale', count: '10 000 000', holds: 12, parts: '10%'},
+    {name: 'Team', count: '15 000 000', holds: 18, parts: '15%'},
+    {name: 'Staking rewards', count: '20 000 000', holds: 0, parts: '20%'},
 
+]
 
 const Start = () => {
     const [hoverOn, setHoverOn] = useState(true)
@@ -82,8 +92,8 @@ const Start = () => {
                     <div className={styles.chart} id={'chart'}>
                         <div className={styles.el}>
                             {
-                                tableData?.map((item, index) => (
-                                    <div 
+                                chartData?.map((item, index) => (
+                                    <div
                                         key={index}
                                         className={`${classSwitch(index)} ${styles.item} ${activeIndex === index + 1 ? styles.active : ''}`}>{item.name} {item.parts}</div>
                                 ))

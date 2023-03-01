@@ -35,7 +35,7 @@
                     filter: drop-shadow(0 0 10px var(--aqua));
                     font-weight: 300;
                     transition: all .3s ease;
-                    opacity: 0;
+                    opacity: 1;
                 }
 
 
@@ -45,7 +45,7 @@
 
                 .item1 {
                     top: 5%;
-                    left: -50%;
+                    left: -80%;
 
                     // &:after {
                     //     position: absolute;
@@ -57,7 +57,7 @@
                     &:after {
                         position: absolute;
                         bottom: 0;
-                        right: -80%;
+                        right: -50%;
                         width: 130px;
                         height: 20px;
                         background-repeat: no-repeat;
@@ -68,13 +68,15 @@
                     }
                 }
                 .item2 {
-                    top: 0%;
-                    right: -61%;
+                    top: -10%;
+                    right: -70%;
+                    max-width: 200px;
+                    width: 100%;
 
                     &:after {
                         position: absolute;
-                        top : 12px;
-                        left: -110%;
+                        top : 50%;
+                        left: -75%;
                         width: 150px;
                         height: 55px;
                         background-repeat: no-repeat;
@@ -86,12 +88,12 @@
                 }
                 .item3 {
                     top: 43%;
-                    right: -45%;
+                    right: -50%;
 
                     &:after {
                         position: absolute;
                         top : 5px;
-                        left: -110%;
+                        left: -90%;
                         width: 110px;
                         height: 20px;
                         background-repeat: no-repeat;
@@ -103,14 +105,12 @@
                 }
                 .item4 {
                     top: 60%;
-                    right: -80%;
-                    max-width: 200px;
-                    width: 100%;
+                    right: -65%;
 
                     &:after {
                         position: absolute;
-                        top : -10%;
-                        left: -70%;
+                        top : -70%;
+                        left: -100%;
                         width: 140px;
                         height: 50px;
                         background-repeat: no-repeat;
@@ -122,13 +122,13 @@
                 }
                 .item5 {
                     top: 75%;
-                    right: -60%;
+                    right: -65%;
                     max-width: 200px;
                     width: 100%;
 
                     &:after {
                         position: absolute;
-                        top : 0%;
+                        top : -50%;
                         left: -60%;
                         width: 130px;
                         height: 40px;
@@ -146,7 +146,7 @@
                     &:after {
                         position: absolute;
                         top : -100%;
-                        right: -110%;
+                        right: -130%;
                         width: 140px;
                         height: 50px;
                         background-repeat: no-repeat;

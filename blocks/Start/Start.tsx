@@ -6,13 +6,13 @@ import { useEffect, useCallback, useState } from 'react';
 
 
 const tableData = [
-    {name: 'private sale', count: 10000000, holds: 12, parts: '10%'},
-    {name: 'public sale', count: 5000000, holds: 6, parts: '5%'},
-    {name: 'Team', count: 15000000, holds: 18, parts: '15%'},
-    {name: 'Marketing and Listing', count: 20000000, holds: 24, parts: '20%'},
-    {name: 'Play to earn managed by the DAO', count: 28000000, holds: 0, parts: '28,%'},
-    {name: 'Liquidity', count: 2000000, holds: 0, parts: '2%'},
-    {name: 'Staking rewards', count: 20000000, holds: 0, parts: '20%'},
+    {name: 'Private sale', count: '10 000 000', holds: 12, parts: '10%'},
+    {name: 'Public sale', count: '5 000 000', holds: 6, parts: '5%'},
+    {name: 'Team', count: '15 000 000', holds: 18, parts: '15%'},
+    {name: 'Marketing and Listing', count: '20 000 000', holds: 24, parts: '20%'},
+    {name: 'Play to earn managed by the DAO', count: '28 000 000', holds: 0, parts: '28,%'},
+    {name: 'Liquidity', count: '2 000 000', holds: 0, parts: '2%'},
+    {name: 'Staking rewards', count: '20 000 000', holds: 0, parts: '20%'},
 ]
 
 

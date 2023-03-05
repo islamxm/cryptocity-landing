@@ -6,38 +6,104 @@ import { defContainer, defItem, whenVisible } from '@/global/animations';
 
 const list = [
     {
-        value: 'Q1',
-        head: 'Launch',
+        value: '1-й квартал',
+        head: '2022',
         body: <>
             <ul>
-                <li>Game Concept Establishment</li>
-                <li>Start of the Development Process</li>
-                <li>Genesis NFT Collection Launched</li>
-                <li>Backend Microservice for Smart Contract Interaction</li>
+                <li>Написание документации и концепта игры</li>
+                <li>Начало разработки Android приложения игры</li>
+                <li>Разработка iOS приложения игры</li>
             </ul>
         </>
     },
     {
-        value: 'Q1',
-        head: 'Launch',
+        value: '2-й квартал',
+        head: '2022',
         body: <>
             <ul>
-                <li>Game Concept Establishment</li>
-                <li>Start of the Development Process</li>
-                <li>Genesis NFT Collection Launched</li>
-                <li>Backend Microservice for Smart Contract Interaction</li>
+                <li>Создание WhitePaper проекта</li>
+                <li>Разработка смарт- контракта токена MPI</li>
+                <li>Прохождение аудита безопасности смарт контракта MPI</li>
+                <li>Разработка сайта</li>
             </ul>
         </>
     },
     {
-        value: 'Q1',
-        head: 'Launch',
+        value: '3-й квартал',
+        head: '2022',
         body: <>
             <ul>
-                <li>Game Concept Establishment</li>
-                <li>Start of the Development Process</li>
-                <li>Genesis NFT Collection Launched</li>
-                <li>Backend Microservice for Smart Contract Interaction</li>
+                <li>Реализация функционала покупки токенов</li>
+                <li>Запуск Альфа версии приложения в базовом функционале</li>
+                <li>Реализация функционала: Поиск MPI на карте</li>
+                <li>Реализация функционала: Аукцион оборудования</li>
+            </ul>
+        </>
+    },
+    {
+        value: '4-й квартал',
+        head: '2022',
+        body: <>
+            <ul>
+                <li>Реализация функционала: Облачный майнинг</li>
+                <li>Реализация функционала: Поиск MPI на карте</li>
+                <li>Реализация функционала: Геолокации пользователя</li>
+            </ul>
+        </>
+    },
+    {
+        value: '1-й квартал',
+        head: '2023',
+        body: <>
+            <ul>
+                <li>Запуск закрытого бета тестирования</li>
+                <li>Запуск соцсетей проекта</li>
+                <li>Поиск и сотрудничество с инфлюэнс рами</li>
+                <li>Начало разработки уникального AR режима игры</li>
+            </ul>
+        </>
+    },
+    {
+        value: '2-й квартал',
+        head: '2023',
+        body: <>
+            <ul>
+                <li>Private Sale</li>
+                <li>Public Sale</li>
+                <li>Запуск IDO проекта на Launchpad</li>
+            </ul>
+        </>
+    },
+    {
+        value: '3-квартал',
+        head: '2023',
+        body: <>
+            <ul>
+                <li>Листинг токена MPI на Pancake Swap</li>
+                <li>Добавление токена MPI на CoinMarketCap</li>
+                <li>Добавление токена MPI на CoinGecko</li>
+                <li>Листинг на CEX</li>
+            </ul>
+        </>
+    },
+    {
+        value: '4-квартал',
+        head: '2023',
+        body: <>
+            <ul>
+                <li>Создание NFT коллекции</li>
+                <li>Разработка собственного NFT Маркетплейса</li>
+                <li>NFT SALE</li>
+                <li>Интеграция NFT в приложение</li>
+            </ul>
+        </>
+    },
+    {
+        value: '1-й квартал',
+        head: '2024',
+        body: <>
+            <ul>
+                <li>Запуск AR режима игры</li>
             </ul>
         </>
     },

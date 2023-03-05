@@ -65,8 +65,18 @@ const Header = ({
                         </div>
                         <div className={styles.btn}>
                             <Button
+                                link={true}
+                                href={'https://datami.ee/results-of-smart-contract-audit-2/'}
+                                text='Аудит'
+                                />
+                        </div>
+                        <div className={styles.btn}>
+                            <Button
+                                link={true}
+                                href={'http://lk.mycryptown.io'}
                                 text='Войти'
                                 />
+                            
                         </div>
                     </div>
                 </div>

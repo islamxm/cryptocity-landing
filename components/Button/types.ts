@@ -3,6 +3,8 @@ export type buttonPropsType = {
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
     before?: React.ReactNode,
     after?: React.ReactNode,
-    size?: 'sm' | 'md' | 'lg'
+    size?: 'sm' | 'md' | 'lg',
+    link?: boolean,
+    href?: string
  
 }

@@ -11,15 +11,50 @@ const list: faqItemPropsType[] = [
     {
         index: 1,
         isActive:false,
-        head: 'Что такое myCryptown ?',
-        text: 'Что такое myCryptown, Что такое myCryptown',
+        head: 'Что такое myCryptown?',
+        text: ' MyCryptown- это увлекательная P2E вселенная, в которой ты можешь стать майнинг-магнатом, собирать зарабатывать крипту в различных ивентах, участвовать с другими игроками в аукционах на которых можно арендовать оборудование для майнинга крипты. Присоединяйся, играй и зарабатывай !',
         setActive: () => {}
     },
     {
         index: 2,
         isActive:false,
-        head: 'Что такое myCryptown ?',
-        text: 'Что такое myCryptown, Что такое myCryptown',
+        head: 'Можно ли заработать в MyCryptown?',
+        text: 'Да, MyCryptown это P2E игра, которая позволяет не только интересно провести время, но и заработать реальную криптовалюту MPI и продать ее на бирже',
+        setActive: () => {}
+    },
+    {
+        index: 3,
+        isActive:false,
+        head: 'Что такое MPI?',
+        text: ' MPI- это главный токен нашего проекта. Который можно очень просто заработать играя в увлекательную игру, и продать зарабатывая USDT!',
+        setActive: () => {}
+    },
+    {
+        index: 4,
+        isActive:false,
+        head: 'Я не нашел MPI на биржах, почему?',
+        text: ' Листинг нашего токена на биржах запланирован на 3й квартал 2022 года.',
+        setActive: () => {}
+    },
+    {
+        index: 5,
+        isActive:false,
+        head: 'Могу ли я вывести и продать MPI до листинга ?',
+        text: 'Да, в приложении можно продать MPI до листинга по фиксированному курсу в вашем личном кабинете этого сайта.',
+        setActive: () => {}
+    },
+    {
+        index: 6,
+        isActive:false,
+        head: 'Будет ли Public Sale у токена MPI?',
+        text: 'Да, наш проект будет проводить Public Sale токена MPI',
+        setActive: () => {}
+    },
+    {
+        index: 7,
+        isActive:false,
+        head: 'На каком блокчейне построена игра myCryptown?',
+        text: 'BNB-chain (BSC)',
         setActive: () => {}
     }
 ]

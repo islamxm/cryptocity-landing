@@ -32,15 +32,16 @@
 
                 .item {
                     position: absolute;
-                    filter: drop-shadow(0 0 10px var(--aqua));
+                    // filter: drop-shadow(0 0 10px var(--aqua));
                     font-weight: 300;
                     transition: all .3s ease;
-                    opacity: 0;
+                    opacity: 1;
                 }
 
 
                 .item.active {
-                    opacity: 1;
+                    filter: drop-shadow(0 0 10px var(--aqua))
+                    // text-shadow: 0 0 50px var(--aqua);
                 }
 
                 .item1 {

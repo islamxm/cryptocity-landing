@@ -100,11 +100,13 @@
                 .item {
                     max-width: 600px;
                     padding-left: calc(50px);
-                    height: 100vh;
+                    // height: 100vh;
                     position: relative;
+                    padding-bottom: 100px;
+                    
 
                     &:last-child {
-                        height: auto;
+                        padding-bottom: 0;
                     }
                     
 

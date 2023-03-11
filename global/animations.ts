@@ -8,14 +8,14 @@ export const defContainer: Variants = {
         delayChildren: 0.5,
         staggerChildren: 0.1,
       }
-    }
+    },
 }
 
 
 export const whenVisible = {
     initial:"hidden",
     whileInView: 'visible',
-    viewport:{once: true}
+    viewport:{once: false}
 }
 
 export const defItem: Variants = {

@@ -110,7 +110,21 @@ const Hero:FC = () => {
                         </motion.div>
                     </div>
                     <motion.div variants={defItem} className={styles.img}>
-                        <Image src={img} alt=""/>
+                        <motion.div
+                            animate={{
+                                y: ['0px', '-20px', '0px']
+                            }}
+                            transition={{
+                            duration: 2,
+                            ease: "easeInOut",
+                            times: [0, 0.5, 1],
+                            repeat: Infinity,
+                            repeatDelay: 0
+                            }}
+                            >
+                            <Image src={img} alt=""/>
+                        </motion.div>
+                        
                     </motion.div>
                 </div>
             </Container>

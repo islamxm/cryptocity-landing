@@ -54,7 +54,7 @@ const Header = ({
                     <div className={styles.main}>
                         <ul className={styles.list}>
                             <li className={styles.item}><Link href={'/'}>White Paper</Link></li>
-                            <li className={styles.item}><Link href={'#chart'}>Тэкономика</Link></li>
+                            <li className={styles.item}><Link href={'#chart'}>Teconomy</Link></li>
                             <li className={styles.item}><Link href={'#roadmap'}>Roadmap</Link></li>
                         </ul>
                     </div>

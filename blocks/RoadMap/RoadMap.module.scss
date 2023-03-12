@@ -97,17 +97,29 @@
             .list {
                 padding-left: 15px;
 
+                .item.done {
+
+                }
                 .item {
                     max-width: 600px;
                     padding-left: calc(50px);
                     // height: 100vh;
                     position: relative;
                     padding-bottom: 100px;
+
+
+                    .status {
+                        font-size: 30px;
+                        line-height: 30px;
+                    }
+
+                    
                     
 
                     &:last-child {
                         padding-bottom: 0;
                     }
+
                     
 
                     .circle {

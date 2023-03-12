@@ -3,6 +3,9 @@ import Container from '@/components/Container/Container';
 import {useState, useRef, useEffect} from 'react';
 import {motion, Variants, useScroll, useSpring} from 'framer-motion';
 import { defContainer, defItem, whenVisible } from '@/global/animations';
+import {BiCheckDouble} from 'react-icons/bi';
+
+
 
 const list = [
     {
@@ -14,7 +17,8 @@ const list = [
                 <li>Начало разработки Android приложения игры</li>
                 <li>Разработка iOS приложения игры</li>
             </ul>
-        </>
+        </>,
+        done: true
     },
     {
         value: '2-й квартал',
@@ -26,7 +30,8 @@ const list = [
                 <li>Прохождение аудита безопасности смарт контракта MPI</li>
                 <li>Разработка сайта</li>
             </ul>
-        </>
+        </>,
+        done: true
     },
     {
         value: '3-й квартал',
@@ -38,7 +43,8 @@ const list = [
                 <li>Реализация функционала: Поиск MPI на карте</li>
                 <li>Реализация функционала: Аукцион оборудования</li>
             </ul>
-        </>
+        </>,
+        done: true
     },
     {
         value: '4-й квартал',
@@ -49,7 +55,8 @@ const list = [
                 <li>Реализация функционала: Поиск MPI на карте</li>
                 <li>Реализация функционала: Геолокации пользователя</li>
             </ul>
-        </>
+        </>,
+        done: true
     },
     {
         value: '1-й квартал',
@@ -61,7 +68,8 @@ const list = [
                 <li>Поиск и сотрудничество с инфлюэнс рами</li>
                 <li>Начало разработки уникального AR режима игры</li>
             </ul>
-        </>
+        </>,
+        done: false
     },
     {
         value: '2-й квартал',
@@ -72,7 +80,8 @@ const list = [
                 <li>Public Sale</li>
                 <li>Запуск IDO проекта на Launchpad</li>
             </ul>
-        </>
+        </>,
+        done: false
     },
     {
         value: '3-квартал',
@@ -84,7 +93,8 @@ const list = [
                 <li>Добавление токена MPI на CoinGecko</li>
                 <li>Листинг на CEX</li>
             </ul>
-        </>
+        </>,
+        done: false
     },
     {
         value: '4-квартал',
@@ -96,7 +106,8 @@ const list = [
                 <li>NFT SALE</li>
                 <li>Интеграция NFT в приложение</li>
             </ul>
-        </>
+        </>,
+        done: false
     },
     {
         value: '1-й квартал',
@@ -105,7 +116,8 @@ const list = [
             <ul>
                 <li>Запуск AR режима игры</li>
             </ul>
-        </>
+        </>,
+        done: false
     },
 ]
 
@@ -222,11 +234,20 @@ const RoadMap = () => {
                         <div className={styles.list}>
                             
                             {
-                                list?.map(({head, body, value}, index) => (
+                                list?.map(({head, body, value, done}, index) => (
                                     <motion.div 
                                         ref={index == list?.length - 1 ? lastItemRef : null}
                                         variants={defContainer} {...whenVisible} className={styles.item} key={index}>
                                         <div className={styles.circle}></div>
+                                        {
+                                            done ? (
+                                                <div className={styles.status}>
+                                                    <BiCheckDouble color={'var(--aqua)'}/>
+                                                </div>
+                                            ) : (
+                                                null
+                                            )
+                                        }
                                         <motion.div variants={defItem} className={styles.value}>{value}</motion.div>
                                         <motion.div variants={defItem} className={styles.name}>{head}</motion.div>
                                         <motion.div variants={defItem} className={styles.text}>

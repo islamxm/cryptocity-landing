@@ -3,7 +3,7 @@ import Container from '@/components/Container/Container';
 import {useState, useRef, useEffect} from 'react';
 import {motion, Variants, useScroll, useSpring} from 'framer-motion';
 import { defContainer, defItem, whenVisible } from '@/global/animations';
-import {BiCheckDouble} from 'react-icons/bi';
+import {BiCheckDouble, BiCheck} from 'react-icons/bi';
 
 
 
@@ -13,9 +13,9 @@ const list = [
         head: '2022',
         body: <>
             <ul>
-                <li>Написание документации и концепта игры</li>
-                <li>Начало разработки Android приложения игры</li>
-                <li>Разработка iOS приложения игры</li>
+                <li> <span className={styles.done}><BiCheckDouble/></span> Написание документации и концепта игры</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Начало разработки Android приложения игры</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Разработка iOS приложения игры</li>
             </ul>
         </>,
         done: true
@@ -25,10 +25,10 @@ const list = [
         head: '2022',
         body: <>
             <ul>
-                <li>Создание WhitePaper проекта</li>
-                <li>Разработка смарт- контракта токена MPI</li>
-                <li>Прохождение аудита безопасности смарт контракта MPI</li>
-                <li>Разработка сайта</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Создание WhitePaper проекта</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Разработка смарт- контракта токена MPI</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Прохождение аудита безопасности смарт контракта MPI</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Разработка сайта</li>
             </ul>
         </>,
         done: true
@@ -38,10 +38,10 @@ const list = [
         head: '2022',
         body: <>
             <ul>
-                <li>Реализация функционала покупки токенов</li>
-                <li>Запуск Альфа версии приложения в базовом функционале</li>
-                <li>Реализация функционала: Поиск MPI на карте</li>
-                <li>Реализация функционала: Аукцион оборудования</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Реализация функционала покупки токенов</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Запуск Альфа версии приложения в базовом функционале</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Реализация функционала: Поиск MPI на карте</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Реализация функционала: Аукцион оборудования</li>
             </ul>
         </>,
         done: true
@@ -51,9 +51,9 @@ const list = [
         head: '2022',
         body: <>
             <ul>
-                <li>Реализация функционала: Облачный майнинг</li>
-                <li>Реализация функционала: Поиск MPI на карте</li>
-                <li>Реализация функционала: Геолокации пользователя</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Реализация функционала: Облачный майнинг</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Реализация функционала: Поиск MPI на карте</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Реализация функционала: Геолокации пользователя</li>
             </ul>
         </>,
         done: true
@@ -63,10 +63,10 @@ const list = [
         head: '2023',
         body: <>
             <ul>
-                <li>Запуск закрытого бета тестирования</li>
-                <li>Запуск соцсетей проекта</li>
-                <li>Поиск и сотрудничество с инфлюэнс рами</li>
-                <li>Начало разработки уникального AR режима игры</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Запуск закрытого бета тестирования</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Запуск соцсетей проекта</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Поиск и сотрудничество с инфлюэнс рами</li>
+                <li><span className={styles.done}><BiCheckDouble/></span> Начало разработки уникального AR режима игры</li>
             </ul>
         </>,
         done: false
@@ -76,9 +76,9 @@ const list = [
         head: '2023',
         body: <>
             <ul>
-                <li>Private Sale</li>
-                <li>Public Sale</li>
-                <li>Запуск IDO проекта на Launchpad</li>
+                <li><span><BiCheck/></span>Private Sale</li>
+                <li><span><BiCheck/></span>Public Sale</li>
+                <li><span><BiCheck/></span>Запуск IDO проекта на Launchpad</li>
             </ul>
         </>,
         done: false
@@ -88,10 +88,10 @@ const list = [
         head: '2023',
         body: <>
             <ul>
-                <li>Листинг токена MPI на Pancake Swap</li>
-                <li>Добавление токена MPI на CoinMarketCap</li>
-                <li>Добавление токена MPI на CoinGecko</li>
-                <li>Листинг на CEX</li>
+                <li><span><BiCheck/></span>Листинг токена MPI на Pancake Swap</li>
+                <li><span><BiCheck/></span>Добавление токена MPI на CoinMarketCap</li>
+                <li><span><BiCheck/></span>Добавление токена MPI на CoinGecko</li>
+                <li><span><BiCheck/></span>Листинг на CEX</li>
             </ul>
         </>,
         done: false
@@ -101,10 +101,10 @@ const list = [
         head: '2023',
         body: <>
             <ul>
-                <li>Создание NFT коллекции</li>
-                <li>Разработка собственного NFT Маркетплейса</li>
-                <li>NFT SALE</li>
-                <li>Интеграция NFT в приложение</li>
+                <li><span><BiCheck/></span>Создание NFT коллекции</li>
+                <li><span><BiCheck/></span>Разработка собственного NFT Маркетплейса</li>
+                <li><span><BiCheck/></span>NFT SALE</li>
+                <li><span><BiCheck/></span>Интеграция NFT в приложение</li>
             </ul>
         </>,
         done: false
@@ -114,7 +114,7 @@ const list = [
         head: '2024',
         body: <>
             <ul>
-                <li>Запуск AR режима игры</li>
+                <li><span><BiCheck/></span>Запуск AR режима игры</li>
             </ul>
         </>,
         done: false
@@ -239,7 +239,7 @@ const RoadMap = () => {
                                         ref={index == list?.length - 1 ? lastItemRef : null}
                                         variants={defContainer} {...whenVisible} className={styles.item} key={index}>
                                         <div className={styles.circle}></div>
-                                        {
+                                        {/* {
                                             done ? (
                                                 <div className={styles.status}>
                                                     <BiCheckDouble color={'var(--aqua)'}/>
@@ -247,7 +247,7 @@ const RoadMap = () => {
                                             ) : (
                                                 null
                                             )
-                                        }
+                                        } */}
                                         <motion.div variants={defItem} className={styles.value}>{value}</motion.div>
                                         <motion.div variants={defItem} className={styles.name}>{head}</motion.div>
                                         <motion.div variants={defItem} className={styles.text}>

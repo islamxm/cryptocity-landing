@@ -5,7 +5,7 @@ export const defContainer: Variants = {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.5,
+        delayChildren: 0.1,
         staggerChildren: 0.1,
       }
     },
